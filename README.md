@@ -1,94 +1,124 @@
-# gemini-3.5-flash-thinkingComplete Setup Guide (Everything Included)
-1. Install Python
 
-Download from: https://www.python.org/downloads/
-During installation, check Add python.exe to PATH
+## Complete Setup Guide (Everything Included)
+
+##  1. Install Python 
+ 1. Download From: Https://www.python.org/downloads/ 
+ 2. During Installation, Check **add Python.exe To Path**
+ 3. Verify:  ```powershell Python   Version
+## 2. Install Node.js (for Claude Code)
+
+ 1.Download from: https://nodejs.org
+
+2.Install LTS version
 Verify:
+PowerShell->node --version
+## 3. Install Claude Code (Optional)
 
-PowerShellpython --version
-2. Install Node.js (for Claude Code)
+powershell:
 
-Download from: https://nodejs.org
-Install LTS version
-Verify:
+npm install -g @anthropic-ai/claude-code
+## 4. Download Gemini Web2API 
 
-PowerShellnode --version
-3. Install Claude Code (Optional)
-PowerShellnpm install -g @anthropic-ai/claude-code
-4. Download Gemini Web2API
+1.Download the project ZIP from GitHub 
 
-Download the project ZIP from GitHub
-Extract to Desktop
-Folder path should be:
+2.Extract to Desktop 
 
-textC:\Users\YourName\Desktop\gemini-web2api-main\gemini-web2api-main
-5. Install Dependencies
-PowerShellcd $env:USERPROFILE\Desktop\gemini-web2api-main\gemini-web2api-main
+3.Folder path should be:
+
+C:\Users\YourName\Desktop\gemini-web2api-main\gemini-web2api-main
+## 5. Install Dependencies
+
+PowerShell-->
+
+cd $env:USERPROFILE\Desktop\gemini-web2api-main\gemini-web2api-main
 pip install httpx
-6. Start Gemini Server
-PowerShellpython gemini_web2api.py
+## 6. Start Gemini Server
+
+PowerShell-->
+
+python gemini_web2api.py
+
 You should see:
-textListening: http://0.0.0.0:8081
+
+Listening: http://0.0.0.0:8081
+
 Keep this terminal open.
+## 🔷👨‍💻VS Code + Continue.dev Setup
 
-VS Code + Continue.dev Setup
+1.Install extension: Continue - open-source AI code agent
 
-Install extension: Continue - open-source AI code agent
-Create config file:
+2.Create config file:
 
-PowerShellnotepad "$env:USERPROFILE\.continue\config.yaml"
-Paste this:
-YAMLname: Local Gemini
+PowerShell--> notepad "$env:USERPROFILE\.continue\config.yaml"
+
+A Notepad will open. Type or paste the given code into it:
+
+name: Local Gemini
+
 version: 1.0.0
+
 schema: v1
 
 models:
   - name: Gemini Local
+
     provider: openai
+
     model: gemini-3.5-flash-thinking
+
     apiBase: http://localhost:8081/v1
+
     apiKey: sk-123
 
-Restart VS Code
-Press Ctrl + L and select Gemini Local
+3.Restart VS Code
+
+4.Press Ctrl + L and select Gemini Local
 
 
-ChatBox Setup
+## 🤖💬ChatBox Setup
 
-Download: https://chatboxai.app
-Settings → Model:
+1.Download: https://chatboxai.app
 
-textAPI Mode  : OpenAI API Compatible
+2.Settings → Model:
+
+API Mode  : OpenAI API Compatible
+
 API Host  : http://localhost:8081/v1
+
 API Key   : sk-123
+
 Model     : gemini-3.5-flash-thinking
+## 🍒Cherry Studio Setup
 
-Cherry Studio Setup
+1.Download: https://cherry-ai.com
 
-Download: https://cherry-ai.com
-Settings → Providers → OpenAI Compatible:
+2.Settings → Providers → OpenAI Compatible:
 
-textAPI Base URL : http://localhost:8081/v1
+API Base URL : http://localhost:8081/v1
+
 API Key      : sk-123
-Model        : gemini-3.5-flash-thinking
 
-Useful Commands
-PowerShell# Start Gemini Server
+Model        : gemini-3.5-flash-thinking
+## 🏷️Useful Commands PowerShell
+
+1.Start Gemini Server
 cd $env:USERPROFILE\Desktop\gemini-web2api-main\gemini-web2api-main
 python gemini_web2api.py
 
-# Edit Continue Config
+2.Edit Continue Config
 notepad "$env:USERPROFILE\.continue\config.yaml"
 
-# Check Python
+3.Check Python
 python --version
 
-# Check Node
+5.Check Node
 node --version
+## ✍Important Notes
 
-Important Notes
+1.Always start the Gemini server first
 
-Always start the Gemini server first
-Keep the server terminal open
-Open a folder in VS Code before creating files with Continue
-Recommended model: gemini-3.5-flash-thinking
+2.Keep the server terminal open
+
+3.Open a folder in VS Code before creating files with Continue
+
+5.Recommended model: gemini-3.5-flash-thinking
